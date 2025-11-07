@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome STORE",
+  "Type": "App",
+  "Id": "Q8OnaXBk7UapM2iLG1JoVA",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/Q8OnaXBk7UapM2iLG1JoVA",
+  "Created": "2025-11-07T11:44:45.1732103Z",
+  "Updated": "2025-11-07T11:44:45.1732103Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

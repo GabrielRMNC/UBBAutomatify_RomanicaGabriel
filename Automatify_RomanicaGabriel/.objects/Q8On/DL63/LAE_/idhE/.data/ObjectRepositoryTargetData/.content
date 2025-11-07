@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="aZ4d7gIm3kOletRq6Kj4yA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="d3356d70-6146-46a3-a9c4-0c34038124a7" CvElementArea="725, 332, 470, 40" CvType="InputBox" DesignTimeRectangle="727, 333, 468, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='loginusername' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2055b2d8-ed44-46b6-9a42-8ee0099bd15e" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="d3356d70-6146-46a3-a9c4-0c34038124a7" CvTextArea="725, 290, 71, 14" CvTextArgument="Username:" CvType="Text" DesignTimeRectangle="727, 288, 68, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='logInModal' tag='LABEL' type='' class='form-control-label' aaname='Username:' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username:' /&gt;" Guid="fbdf3b98-4f8f-49af-94bf-a0a2c644368b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="2f62a63c8f439b95ba106b2d7ff29562.png" xmlns="">0hsfL6_rXAkqT7O2_dwjopQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

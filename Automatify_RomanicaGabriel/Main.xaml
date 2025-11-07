@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +25,23 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -53,13 +70,158 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1019,1855" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="expectedUsername">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">GabrielRomanica</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="ui:Browser" Name="browser" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="556,1832" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[browser]" Url="https://www.demoblaze.com/index.html">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="522,1683" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="loggedIn" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:UiElementExists DisplayName="Element Exists 'A  nameofuser'" Exists="[loggedIn]" sap:VirtualizedContainerService.HintSize="488,139" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ed5f2d96-e28d-471b-89c2-93bc4855beee" InformativeScreenshot="b5610b4dd3773a0595a066de80f2e0d4" Selector="&lt;html app='chrome.exe' omit:title='STORE' /&gt;&lt;webctrl id='nameofuser' tag='A' /&gt;&lt;nav up='1' /&gt;&lt;webctrl id='nameofuser' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[loggedIn = True]" sap:VirtualizedContainerService.HintSize="488,1484" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,169" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="452,109" sap2010:WorkflowViewState.IdRef="MessageBox_10" Text="[&quot;true&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,1185" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome STORE(1)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1125" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="22f6b5ed-c801-4a3d-92fb-3b2d8b1e9be8" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,931" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="22f6b5ed-c801-4a3d-92fb-3b2d8b1e9be8" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" ContentHash="KwyWKGO7FUmZn1ABJ9ejUw" DesignTimeRectangle="1270, 198, 58, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='login2' tag='A' /&gt;" Guid="55a3d3fb-b100-4403-afa2-4ae38da45485" InformativeScreenshot="9b5fefc91e36c51ff56ab2440d499037.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/sy3g_ciZIUCPxMF5Ipok1A" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="22f6b5ed-c801-4a3d-92fb-3b2d8b1e9be8" Text="GabrielRomanica" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="d3356d70-6146-46a3-a9c4-0c34038124a7" ContentHash="aZ4d7gIm3kOletRq6Kj4yA" CvElementArea="725, 332, 470, 40" CvType="InputBox" DesignTimeRectangle="727, 333, 468, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='loginusername' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="2055b2d8-ed44-46b6-9a42-8ee0099bd15e" InformativeScreenshot="2f62a63c8f439b95ba106b2d7ff29562.png" IsResponsive="True" Reference="Fuap7hbV6EKEkmoz7NF_kQ/idhERIzG50CbELTk1SBrOw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CVScreenId="d3356d70-6146-46a3-a9c4-0c34038124a7" CvTextArea="725, 290, 71, 14" CvTextArgument="Username:" CvType="Text" DesignTimeRectangle="727, 288, 68, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='logInModal' tag='LABEL' type='' class='form-control-label' aaname='Username:' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username:' /&gt;" Guid="fbdf3b98-4f8f-49af-94bf-a0a2c644368b" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,246" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="22f6b5ed-c801-4a3d-92fb-3b2d8b1e9be8" Text="gabi2004" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="7171de20-fb62-4041-bc3c-09d7cda13411" ContentHash="NLbZOBbXa0W2ED4dysMN6Q" CvElementArea="725, 430, 470, 41" CvType="InputBox" DesignTimeRectangle="727, 432, 468, 38" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='loginpassword' tag='INPUT' type='password' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="3a08279b-0f47-4096-9412-ec1c4fb0468e" InformativeScreenshot="30cd9f486fbc7a2615edd32e4375411e.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/32PSrfGHH0aLYgoI4WUFSw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                    <uix:Target CVScreenId="7171de20-fb62-4041-bc3c-09d7cda13411" CvTextArea="726, 389, 66, 14" CvTextArgument="Password:" CvType="Text" DesignTimeRectangle="727, 387, 65, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password:' parentid='logInModal' tag='LABEL' type='' class='form-control-label' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password:' /&gt;" Guid="ab7f224a-1aa0-4af2-85aa-4fec791966e0" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="22f6b5ed-c801-4a3d-92fb-3b2d8b1e9be8" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="b222feea-1346-487d-b4c5-39726442ccdc" ContentHash="CqeWgX0C20SqzDvOPZ4zpw" CvElementArea="1115, 553, 82, 42" CvTextArea="1133, 565, 45, 18" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="1117, 555, 78, 38" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Log in' parentid='logInModal' tag='BUTTON' /&gt;" Guid="894ac49e-3be2-4816-ba0b-c98fe721c817" InformativeScreenshot="7642ba695392562820befd25ae5d0635.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/IUTszC3NPkW96Ji2-kLAlA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.OCREngine>
+                      <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+                        <ActivityFunc.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                        </ActivityFunc.Argument>
+                      </ActivityFunc>
+                    </uix:NApplicationCard.OCREngine>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="_LcnsskUREmB2JWEz2dWEA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABrlJREFUWEeVlulzVGUWxu/fMtn3TtLdWRsJi4CRTUQTg8QEZEtiCGuUJWCIoVS0yrKYqfniMMwUNVoOo7iD8EWRKmYsS2tGLTdMer3dd+kt6ebkrWfqvfe+N7e70yn9cL/0h/6d5znnfc6RSl6ayZa8OEul52epdNpPpVN+Kjvnp7LJAJWfDVD5mQBVTASp4lSQKk8GqfK5EFWNh6jqeIiqj4ap+nCYag6FqeZghGpHI1Q7EqG6IZnqDshUv0+m+j1RatgdpYbBKLkGYuTaGaPGHTFq6lOoqVch6Q8vzrKS87MomfajdMqP0nN+lD3vR9nZAMonAig/HUD5qSAqTgZR8VwQlc+GUHk8hKqjIVQdCaP6UBjVB8OoGY2gdiSC2qEIavfLqNsno36PjPrdUdQPRtEwEIWrPwbXkzE09ilofEJBU48CqeT8LHPCSyct+Jll4Mcc8DETXsPhwxHUHjDhdXtl1D8dRf0uE97wVAyunTE07ogZ8MYeBU2P8wKm/SxfeZmAn7bgJ5aAH3bAn3HAuXoB3x1FA1dvwW31vSa86TEVUumUn5nwQK7yfPj4IrxKwLn1Ai6s5/DfYD2HNz/KC5j0Mxsuel4MzvtuwY2+c3h+3/fKOP7nOD79ch6XPkqjc79iqhfWW+qbt6to3qZCKns+wAzL8weuGFwM3TNW3znc6vsT0yrufp/FXJbZ3/u35014nvVcffMjvICzAVYAFwNXDC6GzoKvGo/hn5/NIZ1ZBIvv1wgtaT1X796qQSqfCDBueQFcDFwx+HAEzaMyXrmahJJYKACLb1amnKkX1nO4ewsv4HSQVXD4id8HH3hVxU+h+wXA/M8oQFjP4Zb1HO7erEGqOBVkRr/z4WLal4B7x2TMRKkAttQ3G6GCvhvqN2vwbOQFnAgy0e8CuJj2vKC5+H7KBly5mca12/MF4JwC8vpuwDdp8DysQ6p8NsRyhs0RMhzuGotg8h9xdJ2IGvB1J2PQ02bP3/1i3kg612AU/iKO8ALy++624N5uXsB4iOXARbweDGPvHzV867+PN66n7JT74O6i2i9/yKJvUsO2kypS8+ZvamIBEW1xKI0COFz0ncM3avB06/Bu0CFVHQuxnH6PhVF7MIKrd+aMPwiqhPYjUeOdD17QChTypyfUy9oC1g1raO9X8ZPf/M0owDF0NvwhHd71vIAjYea0nPe794JiA878LWHAXftlfPOLGTL3woTJSwkElVzbb/07g9adCtw9Cr67Z76QH2YoZ+gM6zl8g46WdXFI1YfCzJnrfNh6XzIL+PqXLFzc+r0yzl5O2KCjF+PGglk9okBL5mbAzwHClQ8X23TmtVTO0DnhLQ/yAsbCzN5o1qTXDcm4ensOAxc01O2R0TkaQ0g11d75XxYua7u9cmXxNfzn28JM+Oq7+/By9Y6hc8Jb1sQh1YxGmP3ERK5bW43D+Vq99HHa+MNUhqFnQjPga0YUxOKm+pt3M8ZbH55KIBA1f+OzsWs8YcPF0LWs121462pewEiE5axTcUyIlboriqnLScj6At68OWdvtrdvmTYn5hi2julGym0a0hFPmQVcu5UpgPOhM+BrTXhrVwJS7VCE2ao53FIt4OKa6RpWsPKAYsB3nNLtxfOXd+bsiP3k84zxm5ZYQPegbsC7++NLw1cl0LaSF7BfZjmqrTNKHBPOa0as1b++Zz3R2AIe6NcM+L6JxSG9eHnO7vm1G5mi8LYHEpDq9smsQLWA80tGnFLOg6JHweGXkzh2IWmEjHe7iv/+aA7hvQDBt820/di5FGZCVBTe7ktCqt8jsyVVC7g4JhzXjJHtVrzykHnhT+aQ8m98OmXAfZt1/DxLmAlSUXh7Jy9gd5Qtq9q6ZMQ+z1ksVsJtGNDxr+sZ3Pnqvv3UXn/DbNOvASoKb2/nBQxGWYFqxwEpLOdge587F4sj4Tq2mPDuvjhU64l+eCNbFN7RloTU8FSM5YCdljtVO48J51bLj9f1Op4eS+HW51n8/a0M1mwsDu9oTUFy9ceYc8JzVDuvGGG5les5Wy0vXpfruRPe6eUFPBljTvCSqvMtdwaMtdWc8fpb4Z2eFKTGPoUt2+tiljvTjcPXOuBdy8BbFuG+5jSkxl6F2XYX67VQnW+5M2Dy4SuWgbtNuK8pDanpcSXb/JhKzdtVcj+qknubSu5HVPJs1cizRSPPJo08GzXyPqyTt1unlod0atmgU8u6OLU+GKfWtXFqXR2ntlUJautKUPvKBLWvSFCHL0kdnUnq6EhSZ1uSOltT5POmyOdJkc+dphVNaVrRmKb/A+5n2xrojSV7AAAAAElFTkSuQmCC" InformativeScreenshot="24cf4fb9d7e5d293985edbe1e4b58b15.jpg" Reference="Fuap7hbV6EKEkmoz7NF_kQ/LAE_pD9lTU2SvZcnNOXwjw" Selector="&lt;html app='chrome.exe' title='STORE' /&gt;" Url="https://www.demoblaze.com/index.html" Version="V2" />
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
   </Sequence>
 </Activity>

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Welcome GabrielRomanica",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "s_7bKbOL8UyAB66PLIZRbg",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/s_7bKbOL8UyAB66PLIZRbg",
+  "ParentRef": "Fuap7hbV6EKEkmoz7NF_kQ/F5V5ZuTp_UCrHBtV01iV5w",
+  "Created": "2025-11-07T11:56:49.8641434Z",
+  "Updated": "2025-11-07T11:56:49.8641434Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
