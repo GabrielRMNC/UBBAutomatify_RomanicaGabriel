@@ -1,0 +1,6 @@
+{
+  "Name": "Automatify_RomanicaGabriel",
+  "ProjectType": "Process",
+  "Description": "Automatify",
+  "MainFile": "Main.xaml"
+}
