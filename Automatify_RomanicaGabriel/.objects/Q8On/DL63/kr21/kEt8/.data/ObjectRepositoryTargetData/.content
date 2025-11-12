@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="qLYz81gnxUGXpPiPn38mRQ" Reference="Fuap7hbV6EKEkmoz7NF_kQ/kEt8yTleVE2cHlB0D4MN9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="cf7d1aef-8747-4400-a938-420f87f5412a" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="5c10ec2b-902c-489a-b2ba-67ee1471b117" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="cf7d1aef-8747-4400-a938-420f87f5412a" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 192, 17" ElementType="Text" Guid="8b26fa2b-791f-41f0-a8ac-54e9373e6e5b" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b22808035cc80cca4359f4bbb2d59083.png" xmlns="">0OZkat9d1qUmmd6Wr_BNiqg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

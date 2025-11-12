@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="0ZFMl1H-4k6JttBMZWaIOg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="3cb98fe7-d48b-4e95-80d6-33217d541f84" CvTextArea="1129, 209, 56, 18" CvTextArgument="Log out" CvType="Text" DesignTimeRectangle="1122, 198, 69, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='logout2' tag='A' /&gt;" Guid="72c52d22-f333-4302-af82-b260aaef8463" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="3cb98fe7-d48b-4e95-80d6-33217d541f84" CvTextArea="1129, 209, 56, 18" CvTextArgument="Log out" CvType="Text" DesignTimeRectangle="1128, 209, 57, 19" ElementType="Text" Guid="9e535b8e-7543-47ef-abcb-f866f64c30d2" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="4862175bebd127c64af72b592b3e4fc6.png" xmlns="">0KTXMQUCTOkSLjU84SzEtWw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

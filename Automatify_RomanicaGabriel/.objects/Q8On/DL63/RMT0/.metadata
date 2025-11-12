@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome STORE(2)",
+  "Type": "Screen",
+  "Id": "RMT0qJIla0WOL75SDoG1RA",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/RMT0qJIla0WOL75SDoG1RA",
+  "ParentRef": "Fuap7hbV6EKEkmoz7NF_kQ/DL63I8Fqh0C0AD8aEfB-VA",
+  "Created": "2025-11-12T19:06:15.1032977Z",
+  "Updated": "2025-11-12T19:06:15.1032977Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
