@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Y6ro5fu-WUSYN5LOKrmOWw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="8d2b762f-c718-44ca-83d0-fa65c9b8a488" CvTextArea="1082, 209, 34, 16" CvTextArgument="Cart" CvType="Text" DesignTimeRectangle="1076, 198, 46, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='cartur' tag='A' /&gt;" Guid="63022699-301d-44ee-baa0-b767d0cdf4e5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="8d2b762f-c718-44ca-83d0-fa65c9b8a488" CvTextArea="1082, 209, 34, 16" CvTextArgument="Cart" CvType="Text" DesignTimeRectangle="1082, 209, 34, 16" ElementType="Text" Guid="32504a64-9efb-4fe2-a140-6cab6b05888f" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a912cec0266e4398ca9bfdbeb79e0939.png" xmlns="">0plhNp_XomE-mxx81XwLbDA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

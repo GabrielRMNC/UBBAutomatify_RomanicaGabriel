@@ -4,7 +4,7 @@
   "description": "Automatify",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[25.10.2]",
+    "UiPath.System.Activities": "25.10.3",
     "UiPath.UIAutomation.Activities": "[25.10.19]"
   },
   "webServices": [],
