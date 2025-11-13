@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="L_fo2LYCF0qxDpX3Le7tFQ" Reference="Fuap7hbV6EKEkmoz7NF_kQ/s7b-gYUIWEW9gBH9jYKjaA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="P3z1aHdv5UqMo4-LcGfmdQ" Reference="Fuap7hbV6EKEkmoz7NF_kQ/s7b-gYUIWEW9gBH9jYKjaA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.demoblaze.com/index.html" ContentHash="uf4TkTQJFU2iTizEeOY_eQ" DesignTimeRectangle="676, 224, 855, 1056" FullSelectorArgument="&lt;webctrl id='tbodyid' tag='DIV' /&gt;" Guid="adc426b2-4040-4d01-916b-1dd78bcdfc34" Reference="Fuap7hbV6EKEkmoz7NF_kQ/s7b-gYUIWEW9gBH9jYKjaA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="3c1a43e84385e8a4610795a30dd78234.png" xmlns="">0sn83qUYM0kyKbmwQHjU7yA</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://www.demoblaze.com/index.html" ContentHash="L_fo2LYCF0qxDpX3Le7tFQ" DesignTimeRectangle="676, 145, 855, 1056" FullSelectorArgument="&lt;webctrl id='tbodyid' tag='DIV' /&gt;" Guid="cd07fc9b-fd83-4727-8d23-3a08ec158a3e" Reference="Fuap7hbV6EKEkmoz7NF_kQ/s7b-gYUIWEW9gBH9jYKjaA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="3c1a43e84385e8a4610795a30dd78234.png" xmlns="">0dAYlTyLEZUqKqi9Wl8yqnA</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">ExtractData</x:String>
     <p:InArgument x:TypeArguments="x:String" x:Key="ExtractDataSettings" xml:space="preserve">&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;
@@ -10,6 +10,13 @@
 		&lt;IsValidName&gt;true&lt;/IsValidName&gt;
 		&lt;ValidationErrorMessage /&gt;
 		&lt;IsExtra&gt;false&lt;/IsExtra&gt;
+		&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;
+		&lt;Format xsi:type='TextColumnFormat' /&gt;
+	&lt;/Column&gt;
+	&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Url'&gt;
+		&lt;IsValidName&gt;true&lt;/IsValidName&gt;
+		&lt;ValidationErrorMessage /&gt;
+		&lt;IsExtra&gt;true&lt;/IsExtra&gt;
 		&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;
 		&lt;Format xsi:type='TextColumnFormat' /&gt;
 	&lt;/Column&gt;

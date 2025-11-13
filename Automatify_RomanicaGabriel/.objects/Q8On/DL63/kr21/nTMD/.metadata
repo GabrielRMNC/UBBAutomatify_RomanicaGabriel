@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Samsung galaxy s7",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "nTMDQP-HoU2yF61B8cibrQ",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/nTMDQP-HoU2yF61B8cibrQ",
+  "ParentRef": "Fuap7hbV6EKEkmoz7NF_kQ/kr21_YSxd0OZ0SDY2C2njg",
+  "Created": "2025-11-13T14:04:53.9342013Z",
+  "Updated": "2025-11-13T14:04:53.9342013Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

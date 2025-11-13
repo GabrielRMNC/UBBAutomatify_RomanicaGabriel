@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="U2nR4Fpqmky5uRE6kC6XGA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="IlxnsCPFrE-L3iO9EFxqVA" Reference="Fuap7hbV6EKEkmoz7NF_kQ/FwQOBZtng0G8lexlNyjVcg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
     <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="59cfdc25-0f42-4cf3-b478-aa56d8de6059" CvTextArea="873, 209, 45, 16" CvTextArgument="Home" CvType="Text" DesignTimeRectangle="866, 198, 59, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='navbarExample' tag='A' /&gt;" Guid="d0e4aa7c-78cb-40fc-9c38-ce3b7ef84fe7" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="f5bd8bac677c7ab3c6728a4d66adfed8.png" xmlns="">014TQfcg7Y0OgeWxzhqYr8g</imageRef>
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="3012ea4a-a09a-4c1d-861d-9782dbb95436" CvTextArea="87, 205, 166, 20" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="24, 189, 227, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='nava' tag='A' type='' class='navbar-brand' aaname='       PRODUCT STORE' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="b21cb593-9a31-42d8-aa15-6a11afbd1f58" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="40621e02389a2520697edc5b93582a7e.png" xmlns="">0seS9eHJzHkuY0M_5gcVX2w</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">Click</x:String>
   </ObjectRepositoryTargetData.Data>

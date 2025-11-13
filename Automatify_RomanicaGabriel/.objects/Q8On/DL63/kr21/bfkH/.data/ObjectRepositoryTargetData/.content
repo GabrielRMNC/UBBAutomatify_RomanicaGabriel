@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="t1VnO9h5OkSpTgaTdmx8Lg" Reference="Fuap7hbV6EKEkmoz7NF_kQ/bfkHZ2uaokm37F7h_KZN-Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="d1de47fe-900a-4e27-ba6f-d83fdbc617ec" CvTextArea="710, 599, 199, 25" CvTextArgument="Samsung galaxy s6" CvType="Text" DesignTimeRectangle="712, 599, 196, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl class='hrefch' parentid='tbodyid' tag='A' /&gt;" Guid="be2cbed2-e822-4a42-a60d-71d5dac4d684" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="48c5429cf1ee2e28399520c880a97f8b.png" xmlns="">0yXokYZXDb0mt2KlFbXsdTw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

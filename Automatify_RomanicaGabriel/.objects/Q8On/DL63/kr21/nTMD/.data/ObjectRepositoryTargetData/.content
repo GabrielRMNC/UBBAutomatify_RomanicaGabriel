@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="3wqLD93-uUaedqYUYvX7SA" Reference="Fuap7hbV6EKEkmoz7NF_kQ/nTMDQP-HoU2yF61B8cibrQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/cart.html" CVScreenId="42f3aa3e-f9ba-4651-882f-aac7425537b0" CvType="AnyWordGroup" DesignTimeRectangle="134, 362, 614, 126" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='2' tag='TD' /&gt;" Guid="567bb1fa-45bd-48a6-9952-51ab52c48d7a" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="42f3aa3e-f9ba-4651-882f-aac7425537b0" CvTextArea="144, 329, 31, 14" CvTextArgument="Title" CvType="Text" DesignTimeRectangle="134, 315, 614, 47" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Title' type='' tag='TH' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Title' /&gt;" Guid="623dc6e7-0b3b-4ec2-b6d5-78f2a175c5d7" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="71b77c6d47b34800ed30a0f1536cf0c9.png" xmlns="">0LZXKUlWkkUC2odyTEcReJg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

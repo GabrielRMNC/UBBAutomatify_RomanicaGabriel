@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="YGIeDo90Y0SQYZmmj1ORow" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/prod.html" CVScreenId="5d032472-5ad2-4b06-a529-3433c8ac2adb" CvTextArea="863, 200, 34, 16" CvTextArgument="Cart" CvType="Text" DesignTimeRectangle="857, 189, 46, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='cartur' tag='A' /&gt;" Guid="d20c9cc4-1510-4d57-902e-04ebbde1e2ea" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="5d032472-5ad2-4b06-a529-3433c8ac2adb" CvTextArea="477, 209, 165, 19" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="413, 192, 227, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='nava' tag='A' type='' class='navbar-brand' aaname=' PRODUCT STORE' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="1e6fdd84-346d-4439-9606-fe048f637756" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="6c29711a41e1ab8ebef15eb597dc767e.png" xmlns="">0cpA9sVoZrkaT2C39YN_pmQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

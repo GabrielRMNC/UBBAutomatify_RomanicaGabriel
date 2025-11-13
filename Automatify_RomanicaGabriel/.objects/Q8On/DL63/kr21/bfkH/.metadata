@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Samsung galaxy s6",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "bfkHZ2uaokm37F7h_KZN-Q",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/bfkHZ2uaokm37F7h_KZN-Q",
+  "ParentRef": "Fuap7hbV6EKEkmoz7NF_kQ/kr21_YSxd0OZ0SDY2C2njg",
+  "Created": "2025-11-12T23:29:46.2887454Z",
+  "Updated": "2025-11-12T23:29:46.2887454Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
