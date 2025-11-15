@@ -1,0 +1,248 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="VerifyCart" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="itemsExist" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="browser" Type="OutArgument(ui:Browser)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>VerifyCart_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="VerifyCart" sap:VirtualizedContainerService.HintSize="993,2413" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome STORE(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="594,2390" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" OutUiElement="[browser]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,2196" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="VerifyCartSequence" sap:VirtualizedContainerService.HintSize="558,2136" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cart'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="524,194" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="8d2b762f-c718-44ca-83d0-fa65c9b8a488" ContentHash="5I-R-iK4pECWq1PXB_pOWw" CvTextArea="1082, 209, 34, 16" CvTextArgument="Cart" CvType="Text" DesignTimeRectangle="1076, 198, 46, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='cartur' tag='A' /&gt;" Guid="63022699-301d-44ee-baa0-b767d0cdf4e5" InformativeScreenshot="05218e61e75d8c5d8ba6261ec2188d1e.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/TmuKxnDCo0KE6TEturnsAA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target CVScreenId="6064c077-531f-467c-881d-177100afb5a7" CvTextArea="87, 205, 166, 20" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="24, 189, 227, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='nava' tag='A' type='' class='navbar-brand' aaname='       PRODUCT STORE' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="36528162-3854-483b-b39b-e16690094843" SearchSteps="FuzzySelector, CV" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NCheckState DisplayName="Check App State 'Delete'" Exists="[itemsExist]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="524,1859" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="522,1348" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[itemsExist = True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="488,1122" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                      <ui:InterruptibleDoWhile.Body>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,991" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState DisplayName="Check App State 'Delete(1)'" Exists="[itemsExist]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,931" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,420" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Delete(2)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="caf40ccc-8a79-4457-96e3-1cbda5b45aa0" ContentHash="rugzJdifRkO19mFxpUa3AA" CvTextArea="1002, 377, 44, 14" CvTextArgument="Delete" CvType="Text" DesignTimeRectangle="1002, 378, 43, 15" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="01986f9b-da68-42bb-8279-1889cdd1ea9e" InformativeScreenshot="6e1c396b14a9463fa565b517723ebad1.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/V_8PokXJyEymgT2LWku6MQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                                <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[itemsExist]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[itemsExist]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="caf40ccc-8a79-4457-96e3-1cbda5b45aa0" ContentHash="l9yiBObERUyoRHp9YMLb1w" CvTextArea="1002, 377, 44, 14" CvTextArgument="Delete" CvType="Text" DesignTimeRectangle="1002, 378, 43, 15" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="27a8d497-ed0e-4202-99a3-f943252ed921" InformativeScreenshot="9b69d4c3393dab5fbee5b6a4c2b74cb0.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/xqpgDv87Pk2t-fHCO4bFjg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </ui:InterruptibleDoWhile.Body>
+                    </ui:InterruptibleDoWhile>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Items deleted from cart&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="522,226" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Cart is empty&quot;]" />
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="a062f5a5-44e1-455d-be97-809fa560b500" ContentHash="UYcJyyCVpkKlmK_ZEvfX7g" CvTextArea="1002, 377, 44, 14" CvTextArgument="Delete" CvType="Text" DesignTimeRectangle="1002, 378, 43, 15" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="d015ee98-b590-430d-824b-1e4b1d27ff3e" InformativeScreenshot="9b69d4c3393dab5fbee5b6a4c2b74cb0.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/nKNqxwAuHkiPt4yyWTSttA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+        </ActivityFunc>
+      </uix:NApplicationCard.OCREngine>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="TFpoZhmrG0qFnzTc4ahbxQ" IconBase64="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" InformativeScreenshot="077b366ee4914b3e26f44b1c396ae5df.jpg" Reference="Fuap7hbV6EKEkmoz7NF_kQ/kr21_YSxd0OZ0SDY2C2njg" Selector="&lt;html app='chrome.exe' title='STORE' /&gt;" Url="https://www.demoblaze.com/index.html" Version="V2">
+          <uix:TargetApp.Arguments>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.Arguments>
+          <uix:TargetApp.WorkingDirectory>
+            <InArgument x:TypeArguments="x:String" />
+          </uix:TargetApp.WorkingDirectory>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

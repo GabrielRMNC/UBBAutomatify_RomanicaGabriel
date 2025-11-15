@@ -229,14 +229,16 @@
       <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
       <AssemblyReference>System.Net.Ping</AssemblyReference>
       <AssemblyReference>System.Net.Sockets</AssemblyReference>
+      <AssemblyReference>Automatify_RomanicaGabriel.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="993,12817" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="993,976" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="cartProductPrice" />
       <Variable x:TypeArguments="x:String" Name="cartProductName" />
@@ -247,662 +249,71 @@
       <Variable x:TypeArguments="x:String" Name="maxProductName" />
       <Variable x:TypeArguments="x:Double" Default="1000" Name="maxBudget" />
       <Variable x:TypeArguments="x:Double" Default="0" Name="minBudget" />
-      <Variable x:TypeArguments="x:String" Name="brandFilter">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Samsung</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Samsung" Name="brandFilter" />
       <Variable x:TypeArguments="x:Boolean" Name="itemsExist" />
-      <Variable x:TypeArguments="x:Int32" Name="maxAttempts">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="loginAttempts">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="welcomeText" />
-      <Variable x:TypeArguments="x:String" Name="expectedUsername">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">GabrielRomanica</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="password">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">gabi2004</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="username">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">GabrielRomanica</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="maxAttempts" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="loginAttempts" />
+      <Variable x:TypeArguments="x:String" Default="GabrielRomanica" Name="expectedUsername" />
+      <Variable x:TypeArguments="x:String" Default="gabi2004" Name="password" />
+      <Variable x:TypeArguments="x:String" Default="GabrielRomanica" Name="username" />
       <Variable x:TypeArguments="ui:Browser" Name="browser" />
+      <Variable x:TypeArguments="x:String" Name="welcomeText" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome STORE(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="594,12794" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" OutUiElement="[browser]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Chrome STORE(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,953" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" OutUiElement="[browser]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="592,12600" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,759" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Welcome GabrielRomanica(3)'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="558,4936" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-              <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="556,2739" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGetText DisplayName="Get Text 'Welcome GabrielRomanica'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="522,143" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" TextString="[welcomeText]" Version="V5">
-                    <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="1a012bc2-d03a-4827-9a3f-524364176260" ContentHash="RRVSvJQnyUm9cEJQa3Attw" CvType="AnyWordGroup" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="d6b81596-7fb0-4d62-9229-8a3b10a5afb6" InformativeScreenshot="41a3e59d28bb99a58f562f91da0558e9.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/wltYuM9vs0uIZ0z-JBl6uQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CVScreenId="1a012bc2-d03a-4827-9a3f-524364176260" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 192, 17" ElementType="Text" Guid="ba0fc592-3c7a-4608-b78e-32bfd281b48e" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NGetText.Target>
-                  </uix:NGetText>
-                  <If Condition="[welcomeText.Contains(expectedUsername)]" sap:VirtualizedContainerService.HintSize="522,2536" sap2010:WorkflowViewState.IdRef="If_4">
-                    <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="520,226" sap2010:WorkflowViewState.IdRef="Sequence_27">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Already Logged In&quot;]" />
-                      </Sequence>
-                    </If.Then>
-                    <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="520,2180" sap2010:WorkflowViewState.IdRef="Sequence_28">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="logOutSequence" sap:VirtualizedContainerService.HintSize="486,277" sap2010:WorkflowViewState.IdRef="Sequence_24">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log out'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,185" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="3cb98fe7-d48b-4e95-80d6-33217d541f84" ContentHash="0ZFMl1H-4k6JttBMZWaIOg" CvTextArea="1129, 209, 56, 18" CvTextArgument="Log out" CvType="Text" DesignTimeRectangle="1122, 198, 69, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='logout2' tag='A' /&gt;" Guid="72c52d22-f333-4302-af82-b260aaef8463" InformativeScreenshot="4862175bebd127c64af72b592b3e4fc6.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/JwWTDYtvJkq-vf4CK4WHGw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CVScreenId="3cb98fe7-d48b-4e95-80d6-33217d541f84" CvTextArea="1129, 209, 56, 18" CvTextArgument="Log out" CvType="Text" DesignTimeRectangle="1128, 209, 57, 19" ElementType="Text" Guid="9e535b8e-7543-47ef-abcb-f866f64c30d2" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                        </Sequence>
-                        <Sequence DisplayName="loginSequence" sap:VirtualizedContainerService.HintSize="486,1677" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="6d738ab8-3ef4-4243-8e00-1d834db9c7c9" ContentHash="A05vtxXTFUK19NyoqL6lPw" CvTextArea="1276, 209, 45, 18" CvTextArgument="Log in" CvType="Text" DesignTimeRectangle="1270, 198, 58, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='login2' tag='A' /&gt;" Guid="2af26725-837d-49bd-ab26-aa90bfa5b89d" InformativeScreenshot="26a3540e4ff85249a82978b68c0124c2.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/aJA6qdxU-0e9yJ9EvVY1mA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CVScreenId="6d738ab8-3ef4-4243-8e00-1d834db9c7c9" CvTextArea="1276, 209, 45, 18" CvTextArgument="Log in" CvType="Text" DesignTimeRectangle="1276, 209, 45, 19" ElementType="Text" Guid="3619058d-c416-4949-86bc-e287dcc3b0db" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Text="[username]" Version="V5">
-                            <uix:NTypeInto.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="a2650771-83bf-48f1-bca9-624606b26a01" ContentHash="Tq3Ae5h-7kuKhV8zBjODSA" CvElementArea="725, 332, 470, 40" CvType="InputBox" DesignTimeRectangle="727, 333, 468, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='loginusername' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="7dc895eb-83d4-48ed-8b4c-844adf793a92" InformativeScreenshot="34db38b8e454193bdd00323c421d0552.png" IsResponsive="True" Reference="Fuap7hbV6EKEkmoz7NF_kQ/x39-xlN4wkGYLhHWvhM9Lw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CVScreenId="a2650771-83bf-48f1-bca9-624606b26a01" CvTextArea="726, 290, 70, 14" CvTextArgument="Username:" CvType="Text" DesignTimeRectangle="727, 288, 68, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='logInModal' tag='LABEL' type='' class='form-control-label' aaname='Username:' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username:' /&gt;" Guid="89c40c10-0142-4bbb-8cdc-1931c01f7953" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NTypeInto.Target>
-                          </uix:NTypeInto>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Text="[password]" Version="V5">
-                            <uix:NTypeInto.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="0ebaf5a8-01b8-42a5-81d1-b91ebdd7bacc" ContentHash="T5QRgk_m8kamLfmmNIMREA" CvElementArea="726, 430, 469, 41" CvType="InputBox" DesignTimeRectangle="727, 432, 468, 38" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='loginpassword' tag='INPUT' type='password' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="e59799ca-a88b-4c98-8253-b213eec6de77" InformativeScreenshot="30de90a5d7112c148cc164514124cb71.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/7XbJWWTDcke3FZ2WGWtvDA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CVScreenId="0ebaf5a8-01b8-42a5-81d1-b91ebdd7bacc" CvTextArea="726, 389, 66, 14" CvTextArgument="Password:" CvType="Text" DesignTimeRectangle="727, 387, 65, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password:' parentid='logInModal' tag='LABEL' type='' class='form-control-label' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password:' /&gt;" Guid="8eddf166-898e-4456-b6b8-db7f4d9c8d5d" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NTypeInto.Target>
-                          </uix:NTypeInto>
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                            <uix:NClick.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="0ebaf5a8-01b8-42a5-81d1-b91ebdd7bacc" ContentHash="Dd4bTA1HI0azBWuGLjx3UA" CvElementArea="1115, 553, 82, 41" CvTextArea="1133, 565, 45, 18" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="1117, 555, 78, 38" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Log in' parentid='logInModal' tag='BUTTON' /&gt;" Guid="f4d951bd-2552-4785-ae6d-79af881143e8" InformativeScreenshot="e0c3004c9840784e7f13e4fe3408ff73.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/0qo-9-r0oUCu_Xfx8Akngg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                            </uix:NClick.Target>
-                          </uix:NClick>
-                          <uix:NCheckState DisplayName="Check App State 'Welcome GabrielRomanica'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,705" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Timeout="10" Version="V5">
-                            <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGetText DisplayName="Get Text 'Welcome GabrielRomanica'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" TextString="[welcomeText]" Version="V5">
-                                  <uix:NGetText.Target>
-                                    <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="db56ac0f-f8b6-4572-8f25-e13e440deaba" ContentHash="tZUNK6ykdEydMQfPHIrY8g" CvType="AnyWordGroup" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="8d64a526-fa38-40a9-bf61-4f962eaccaaf" InformativeScreenshot="2365264e5cb643d6b97ae551e2dffb71.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/psWXtKZqr0GONvMD4Z5Qww" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                                      <uix:TargetAnchorable.Anchors>
-                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="db56ac0f-f8b6-4572-8f25-e13e440deaba" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 193, 17" ElementType="Text" Guid="f321f60f-6c8f-48e4-8bbe-0f2d0e0fa66a" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                        </scg:List>
-                                      </uix:TargetAnchorable.Anchors>
-                                    </uix:TargetAnchorable>
-                                  </uix:NGetText.Target>
-                                </uix:NGetText>
-                              </Sequence>
-                            </uix:NCheckState.IfExists>
-                            <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Login Error&quot;]" />
-                              </Sequence>
-                            </uix:NCheckState.IfNotExists>
-                            <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="2a29e128-2723-49ae-b171-6f8fb2330999" ContentHash="edW9GMih_k6kyprCzcFVwA" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="a23d876e-65b5-4b1a-b052-43bb644ed3c6" InformativeScreenshot="b22808035cc80cca4359f4bbb2d59083.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/IKde_kNXf0ayyFG1a0E1xQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CVScreenId="2a29e128-2723-49ae-b171-6f8fb2330999" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 192, 17" ElementType="Text" Guid="085d34a7-4444-4877-ae13-2c454ed78f1e" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NCheckState.Target>
-                          </uix:NCheckState>
-                        </Sequence>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Wrong User.Logged out and Logged In.&quot;]" />
-                      </Sequence>
-                    </If.Else>
-                  </If>
-                </Sequence>
-              </uix:NCheckState.IfExists>
-              <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="556,1903" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="loginSequence" sap:VirtualizedContainerService.HintSize="486,1677" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="6d738ab8-3ef4-4243-8e00-1d834db9c7c9" ContentHash="A05vtxXTFUK19NyoqL6lPw" CvTextArea="1276, 209, 45, 18" CvTextArgument="Log in" CvType="Text" DesignTimeRectangle="1270, 198, 58, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='login2' tag='A' /&gt;" Guid="2af26725-837d-49bd-ab26-aa90bfa5b89d" InformativeScreenshot="26a3540e4ff85249a82978b68c0124c2.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/aJA6qdxU-0e9yJ9EvVY1mA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="6d738ab8-3ef4-4243-8e00-1d834db9c7c9" CvTextArea="1276, 209, 45, 18" CvTextArgument="Log in" CvType="Text" DesignTimeRectangle="1276, 209, 45, 19" ElementType="Text" Guid="3619058d-c416-4949-86bc-e287dcc3b0db" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Text="[username]" Version="V5">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="a2650771-83bf-48f1-bca9-624606b26a01" ContentHash="Tq3Ae5h-7kuKhV8zBjODSA" CvElementArea="725, 332, 470, 40" CvType="InputBox" DesignTimeRectangle="727, 333, 468, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='loginusername' tag='INPUT' type='text' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="7dc895eb-83d4-48ed-8b4c-844adf793a92" InformativeScreenshot="34db38b8e454193bdd00323c421d0552.png" IsResponsive="True" Reference="Fuap7hbV6EKEkmoz7NF_kQ/x39-xlN4wkGYLhHWvhM9Lw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="a2650771-83bf-48f1-bca9-624606b26a01" CvTextArea="726, 290, 70, 14" CvTextArgument="Username:" CvType="Text" DesignTimeRectangle="727, 288, 68, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='logInModal' tag='LABEL' type='' class='form-control-label' aaname='Username:' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username:' /&gt;" Guid="89c40c10-0142-4bbb-8cdc-1931c01f7953" SearchSteps="FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                    </uix:NTypeInto>
-                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,246" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Text="[password]" Version="V5">
-                      <uix:NTypeInto.Target>
-                        <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="0ebaf5a8-01b8-42a5-81d1-b91ebdd7bacc" ContentHash="T5QRgk_m8kamLfmmNIMREA" CvElementArea="726, 430, 469, 41" CvType="InputBox" DesignTimeRectangle="727, 432, 468, 38" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='loginpassword' tag='INPUT' type='password' class='form-control' aaname='' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="e59799ca-a88b-4c98-8253-b213eec6de77" InformativeScreenshot="30de90a5d7112c148cc164514124cb71.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/7XbJWWTDcke3FZ2WGWtvDA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="0ebaf5a8-01b8-42a5-81d1-b91ebdd7bacc" CvTextArea="726, 389, 66, 14" CvTextArgument="Password:" CvType="Text" DesignTimeRectangle="727, 387, 65, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password:' parentid='logInModal' tag='LABEL' type='' class='form-control-label' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password:' /&gt;" Guid="8eddf166-898e-4456-b6b8-db7f4d9c8d5d" SearchSteps="FuzzySelector, CV" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NTypeInto.Target>
-                    </uix:NTypeInto>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Log in(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="0ebaf5a8-01b8-42a5-81d1-b91ebdd7bacc" ContentHash="Dd4bTA1HI0azBWuGLjx3UA" CvElementArea="1115, 553, 82, 41" CvTextArea="1133, 565, 45, 18" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="1117, 555, 78, 38" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Log in' parentid='logInModal' tag='BUTTON' /&gt;" Guid="f4d951bd-2552-4785-ae6d-79af881143e8" InformativeScreenshot="e0c3004c9840784e7f13e4fe3408ff73.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/0qo-9-r0oUCu_Xfx8Akngg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                    <uix:NCheckState DisplayName="Check App State 'Welcome GabrielRomanica'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,705" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Timeout="10" Version="V5">
-                      <uix:NCheckState.IfExists>
-                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,194" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NGetText DisplayName="Get Text 'Welcome GabrielRomanica'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,134" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" TextString="[welcomeText]" Version="V5">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="db56ac0f-f8b6-4572-8f25-e13e440deaba" ContentHash="tZUNK6ykdEydMQfPHIrY8g" CvType="AnyWordGroup" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="8d64a526-fa38-40a9-bf61-4f962eaccaaf" InformativeScreenshot="2365264e5cb643d6b97ae551e2dffb71.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/psWXtKZqr0GONvMD4Z5Qww" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CVScreenId="db56ac0f-f8b6-4572-8f25-e13e440deaba" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 193, 17" ElementType="Text" Guid="f321f60f-6c8f-48e4-8bbe-0f2d0e0fa66a" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                        </Sequence>
-                      </uix:NCheckState.IfExists>
-                      <uix:NCheckState.IfNotExists>
-                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Login Error&quot;]" />
-                        </Sequence>
-                      </uix:NCheckState.IfNotExists>
-                      <uix:NCheckState.Target>
-                        <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="2a29e128-2723-49ae-b171-6f8fb2330999" ContentHash="edW9GMih_k6kyprCzcFVwA" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="a23d876e-65b5-4b1a-b052-43bb644ed3c6" InformativeScreenshot="b22808035cc80cca4359f4bbb2d59083.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/IKde_kNXf0ayyFG1a0E1xQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="2a29e128-2723-49ae-b171-6f8fb2330999" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 192, 17" ElementType="Text" Guid="085d34a7-4444-4877-ae13-2c454ed78f1e" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NCheckState.Target>
-                    </uix:NCheckState>
-                  </Sequence>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Logged In&quot;]" />
-                </Sequence>
-              </uix:NCheckState.IfNotExists>
-              <uix:NCheckState.Target>
-                <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="cf7d1aef-8747-4400-a938-420f87f5412a" ContentHash="AvKNiMZGsUyhkCZswiRqrg" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="5c10ec2b-902c-489a-b2ba-67ee1471b117" InformativeScreenshot="b22808035cc80cca4359f4bbb2d59083.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/kEt8yTleVE2cHlB0D4MN9Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CVScreenId="cf7d1aef-8747-4400-a938-420f87f5412a" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 192, 17" ElementType="Text" Guid="8b26fa2b-791f-41f0-a8ac-54e9373e6e5b" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NCheckState.Target>
-            </uix:NCheckState>
-            <Sequence DisplayName="VerifyCartSequence" sap:VirtualizedContainerService.HintSize="558,2145" sap2010:WorkflowViewState.IdRef="Sequence_32">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cart'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="524,194" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="8d2b762f-c718-44ca-83d0-fa65c9b8a488" ContentHash="5I-R-iK4pECWq1PXB_pOWw" CvTextArea="1082, 209, 34, 16" CvTextArgument="Cart" CvType="Text" DesignTimeRectangle="1076, 198, 46, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='cartur' tag='A' /&gt;" Guid="63022699-301d-44ee-baa0-b767d0cdf4e5" InformativeScreenshot="05218e61e75d8c5d8ba6261ec2188d1e.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/TmuKxnDCo0KE6TEturnsAA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="6064c077-531f-467c-881d-177100afb5a7" CvTextArea="87, 205, 166, 20" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="24, 189, 227, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='nava' tag='A' type='' class='navbar-brand' aaname='       PRODUCT STORE' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="36528162-3854-483b-b39b-e16690094843" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NCheckState DisplayName="Check App State 'Delete'" Exists="[itemsExist]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="524,1859" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="522,1348" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[itemsExist = True]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="488,1122" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
-                      <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,991" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheckState DisplayName="Check App State 'Delete(1)'" Exists="[itemsExist]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,931" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                            <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,420" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Delete(2)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,194" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                                  <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="caf40ccc-8a79-4457-96e3-1cbda5b45aa0" ContentHash="rugzJdifRkO19mFxpUa3AA" CvTextArea="1002, 377, 44, 14" CvTextArgument="Delete" CvType="Text" DesignTimeRectangle="1002, 378, 43, 15" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="01986f9b-da68-42bb-8279-1889cdd1ea9e" InformativeScreenshot="6e1c396b14a9463fa565b517723ebad1.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/V_8PokXJyEymgT2LWku6MQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                                  </uix:NClick.Target>
-                                </uix:NClick>
-                                <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_2">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Boolean">[itemsExist]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                              </Sequence>
-                            </uix:NCheckState.IfExists>
-                            <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_37">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_3">
-                                  <Assign.To>
-                                    <OutArgument x:TypeArguments="x:Boolean">[itemsExist]</OutArgument>
-                                  </Assign.To>
-                                  <Assign.Value>
-                                    <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
-                                  </Assign.Value>
-                                </Assign>
-                              </Sequence>
-                            </uix:NCheckState.IfNotExists>
-                            <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="caf40ccc-8a79-4457-96e3-1cbda5b45aa0" ContentHash="l9yiBObERUyoRHp9YMLb1w" CvTextArea="1002, 377, 44, 14" CvTextArgument="Delete" CvType="Text" DesignTimeRectangle="1002, 378, 43, 15" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="27a8d497-ed0e-4202-99a3-f943252ed921" InformativeScreenshot="9b69d4c3393dab5fbee5b6a4c2b74cb0.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/xqpgDv87Pk2t-fHCO4bFjg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                            </uix:NCheckState.Target>
-                          </uix:NCheckState>
-                        </Sequence>
-                      </ui:InterruptibleDoWhile.Body>
-                    </ui:InterruptibleDoWhile>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,166" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Items deleted from cart&quot;]" />
-                  </Sequence>
-                </uix:NCheckState.IfExists>
-                <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="522,226" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Cart is empty&quot;]" />
-                  </Sequence>
-                </uix:NCheckState.IfNotExists>
-                <uix:NCheckState.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="a062f5a5-44e1-455d-be97-809fa560b500" ContentHash="UYcJyyCVpkKlmK_ZEvfX7g" CvTextArea="1002, 377, 44, 14" CvTextArgument="Delete" CvType="Text" DesignTimeRectangle="1002, 378, 43, 15" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='A' /&gt;" Guid="d015ee98-b590-430d-824b-1e4b1d27ff3e" InformativeScreenshot="9b69d4c3393dab5fbee5b6a4c2b74cb0.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/nKNqxwAuHkiPt4yyWTSttA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                </uix:NCheckState.Target>
-              </uix:NCheckState>
-            </Sequence>
-            <Sequence DisplayName="ScrapeProductsTableSequence" sap:VirtualizedContainerService.HintSize="558,3437" sap2010:WorkflowViewState.IdRef="Sequence_38">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="sd2:DataTable" Name="dtProducts" />
-                <Variable x:TypeArguments="sd2:DataTable" Name="filteredProducts" />
-              </Sequence.Variables>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home (current)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="59cfdc25-0f42-4cf3-b478-aa56d8de6059" ContentHash="IlxnsCPFrE-L3iO9EFxqVA" CvTextArea="873, 209, 45, 16" CvTextArgument="Home" CvType="Text" DesignTimeRectangle="866, 198, 59, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='navbarExample' tag='A' /&gt;" Guid="d0e4aa7c-78cb-40fc-9c38-ce3b7ef84fe7" InformativeScreenshot="40621e02389a2520697edc5b93582a7e.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/FwQOBZtng0G8lexlNyjVcg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="3012ea4a-a09a-4c1d-861d-9782dbb95436" CvTextArea="87, 205, 166, 20" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="24, 189, 227, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='nava' tag='A' type='' class='navbar-brand' aaname='       PRODUCT STORE' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="b21cb593-9a31-42d8-aa15-6a11afbd1f58" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtProducts]" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Price'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Description'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column3' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h4' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h5' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                <uix:NExtractData.NextLink>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="8c789521-1afb-4bfd-9394-bdaef1de4d25" CvElementArea="1458, 691, 60, 38" CvTextArea="1472, 702, 32, 14" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1459, 688, 57, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='next2' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='next2' tag='BUTTON' type='' class='page-link' aaname='Next' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Next' /&gt;" Guid="ab3dab4f-52e5-4399-afa8-465a990273e0" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="52443241-8238-482c-86b8-cf1da2f6f19e" CvTextArea="1289, 800, 196, 22" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="1223, 789, 545, 50" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='3' parentid='fotcont' tag='H4' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='fotcont' tag='H4' class='' aaname=' PRODUCT STORE' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="82e8738f-c655-4abf-b56f-50feb197508b" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                    <uix:TargetAnchorable.PointOffset>
-                      <uix:PointOffset X="0" Y="0" />
-                    </uix:TargetAnchorable.PointOffset>
-                  </uix:TargetAnchorable>
-                </uix:NExtractData.NextLink>
-                <uix:NExtractData.Target>
-                  <uix:TargetAnchorable BrowserURL="https://www.demoblaze.com/index.html" ContentHash="P3z1aHdv5UqMo4-LcGfmdQ" DesignTimeRectangle="676, 145, 855, 1056" FullSelectorArgument="&lt;webctrl id='tbodyid' tag='DIV' /&gt;" Guid="cd07fc9b-fd83-4727-8d23-3a08ec158a3e" InformativeScreenshot="3c1a43e84385e8a4610795a30dd78234.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/s7b-gYUIWEW9gBH9jYKjaA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-                </uix:NExtractData.Target>
-              </uix:NExtractData>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Scraped rows: &quot; + dtProducts.Rows.Count.ToString]" />
-              <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="PriceNum" DataTable="[dtProducts]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
-              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtProducts]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452,758" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                <ui:ForEachRow.Body>
-                  <ActivityAction x:TypeArguments="sd2:DataRow">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="sd2:DataRow" Name="row" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,576" sap2010:WorkflowViewState.IdRef="Sequence_39">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="priceText" />
-                        <Variable x:TypeArguments="x:String" Name="cleanText" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign1" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_5">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[priceText]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[row("Price").ToString]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <Assign DisplayName="Assign2" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_6">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[cleanText]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(priceText, "[^0-9.]", "")]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <Assign DisplayName="Assign3" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="Assign_7">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Object">[row("PriceNum")]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Double">[If(String.IsNullOrWhiteSpace(cleanText), 0, Double.Parse(cleanText, System.Globalization.CultureInfo.InvariantCulture))]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:ForEachRow.Body>
-              </ui:ForEachRow>
-              <Assign DisplayName="Assign4" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_8">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="sd2:DataTable">[filteredProducts]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="sd2:DataTable" xml:space="preserve">[If(
-  dtProducts.AsEnumerable().Any(Function(r) _
-    r.Field(Of String)("Name").ToLower().Contains(brandFilter.ToLower()) AndAlso
-    r.Field(Of Double)("PriceNum") &gt;= minBudget AndAlso
-    r.Field(Of Double)("PriceNum") &lt;= maxBudget
-  ),
-  dtProducts.AsEnumerable().
-    Where(Function(r) r.Field(Of String)("Name").ToLower().Contains(brandFilter.ToLower()) AndAlso
-                      r.Field(Of Double)("PriceNum") &gt;= minBudget AndAlso
-                      r.Field(Of Double)("PriceNum") &lt;= maxBudget).
-    CopyToDataTable(),
-  dtProducts.Clone() 
-)]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Filtered rows count: &quot; + filteredProducts.Rows.Count.ToString]" />
-              <If Condition="[filteredProducts.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="452,1457" sap2010:WorkflowViewState.IdRef="If_5">
-                <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,1101" sap2010:WorkflowViewState.IdRef="Sequence_40">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign5" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_10">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="sd2:DataRow">[maxRow]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="sd2:DataRow" xml:space="preserve">[filteredProducts.AsEnumerable().
-           OrderByDescending(Function(r) r.Field(Of Double)("PriceNum")).
-           First()]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign DisplayName="Assign6" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_9">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[maxProductName]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[maxRow.Field(Of String)("Name")]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign DisplayName="Assign7" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_11">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Double">[maxProductPrice]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Double">[maxRow.Field(Of Double)("PriceNum")]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign DisplayName="Assign8" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_12">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[maxProductDescription]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[maxRow.Field(Of String)("Description")]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <Assign DisplayName="Assign9" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_13">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[prodUrl]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[maxRow.Field(Of String)("Url")]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Most expensive product: &quot; + maxProductName + &quot; | $&quot; + maxProductPrice.ToString + &quot; | &quot; + maxProductDescription]" />
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_41">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;No product matches&quot;]" />
-                  </Sequence>
-                </If.Else>
-              </If>
-            </Sequence>
-            <Sequence DisplayName="AddProductToCartSequence" sap:VirtualizedContainerService.HintSize="558,2022" sap2010:WorkflowViewState.IdRef="Sequence_42">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home (current)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="59cfdc25-0f42-4cf3-b478-aa56d8de6059" ContentHash="IlxnsCPFrE-L3iO9EFxqVA" CvTextArea="873, 209, 45, 16" CvTextArgument="Home" CvType="Text" DesignTimeRectangle="866, 198, 59, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='navbarExample' tag='A' /&gt;" Guid="d0e4aa7c-78cb-40fc-9c38-ce3b7ef84fe7" InformativeScreenshot="40621e02389a2520697edc5b93582a7e.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/FwQOBZtng0G8lexlNyjVcg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="3012ea4a-a09a-4c1d-861d-9782dbb95436" CvTextArea="87, 205, 166, 20" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="24, 189, 227, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='nava' tag='A' type='' class='navbar-brand' aaname='       PRODUCT STORE' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="b21cb593-9a31-42d8-aa15-6a11afbd1f58" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NGoToUrl DisplayName="Go To URL - " sap:VirtualizedContainerService.HintSize="452,123" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Url="[prodUrl]" Version="V5" />
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Add to cart'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/prod.html" CVScreenId="c60b7af1-3f12-4137-af25-446d7e6e10b0" ContentHash="SOUmg4Z2skqbnrfSzCP5Pw" CvElementArea="809, 573, 151, 55" CvTextArea="834, 590, 102, 19" CvTextArgument="Add to cart" CvType="Button" DesignTimeRectangle="811, 576, 148, 51" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='tbodyid' tag='A' /&gt;" Guid="ac3e9d73-5875-4dd9-9215-30fe9b4514df" InformativeScreenshot="34fad1668ea8c900fef5b584e8050dca.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/bdl3z-s9t0etpbWUX31MSw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive" />
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NClosePopup PopupException="{x:Null}" PopupHandled="{x:Null}" DisplayName="Close Popup" sap:VirtualizedContainerService.HintSize="452,191" sap2010:WorkflowViewState.IdRef="NClosePopup_1" PreferredButtons="[New String(){&quot;Close&quot;,&quot;Cancel&quot;,&quot;OK&quot;}]" Version="V5" />
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Cart(1)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_14" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/prod.html" CVScreenId="5d032472-5ad2-4b06-a529-3433c8ac2adb" ContentHash="YGIeDo90Y0SQYZmmj1ORow" CvTextArea="863, 200, 34, 16" CvTextArgument="Cart" CvType="Text" DesignTimeRectangle="857, 189, 46, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='cartur' tag='A' /&gt;" Guid="d20c9cc4-1510-4d57-902e-04ebbde1e2ea" InformativeScreenshot="6c29711a41e1ab8ebef15eb597dc767e.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/eQgH0JJnqky9sGkv-Q9MXA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="5d032472-5ad2-4b06-a529-3433c8ac2adb" CvTextArea="477, 209, 165, 19" CvTextArgument="PRODUCT STORE" CvType="Text" DesignTimeRectangle="413, 192, 227, 58" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='nava' tag='A' type='' class='navbar-brand' aaname=' PRODUCT STORE' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='PRODUCT STORE' /&gt;" Guid="1e6fdd84-346d-4439-9606-fe048f637756" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NClick.Target>
-              </uix:NClick>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Added To Cart&quot;]" />
-              <uix:NGetText DisplayName="Get Text 'Samsung galaxy s7'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" TextString="[cartProductName]" Version="V5">
-                <uix:NGetText.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="42f3aa3e-f9ba-4651-882f-aac7425537b0" ContentHash="3wqLD93-uUaedqYUYvX7SA" CvType="AnyWordGroup" DesignTimeRectangle="134, 362, 614, 126" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='2' tag='TD' /&gt;" Guid="567bb1fa-45bd-48a6-9952-51ab52c48d7a" InformativeScreenshot="71b77c6d47b34800ed30a0f1536cf0c9.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/nTMDQP-HoU2yF61B8cibrQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target CVScreenId="42f3aa3e-f9ba-4651-882f-aac7425537b0" CvTextArea="144, 329, 31, 14" CvTextArgument="Title" CvType="Text" DesignTimeRectangle="134, 315, 614, 47" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Title' type='' tag='TH' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Title' /&gt;" Guid="623dc6e7-0b3b-4ec2-b6d5-78f2a175c5d7" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NGetText.Target>
-              </uix:NGetText>
-              <uix:NGetText DisplayName="Get Text 'Price'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,143" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" TextString="[cartProductPrice]" Version="V5">
-                <uix:NGetText.Target>
-                  <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="42f3aa3e-f9ba-4651-882f-aac7425537b0" ContentHash="ETOg4pzxN0uzMn7pj80Yhg" CvType="AnyWordGroup" DesignTimeRectangle="748, 362, 242, 126" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='3' tableRow='2' tag='TD' /&gt;" Guid="cd80aa7e-ecf9-449e-abc4-dad435e8e7b4" InformativeScreenshot="090ed9820a761f327cabe6b77caf0b8a.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/DKx-uFtlwUu5YhF62Okiog" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                        <uix:Target CVScreenId="42f3aa3e-f9ba-4651-882f-aac7425537b0" CvTextArea="759, 329, 34, 14" CvTextArgument="Price" CvType="Text" DesignTimeRectangle="748, 315, 242, 47" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Price' type='' tag='TH' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Price' /&gt;" Guid="0221366c-b271-42a8-a5a9-e6ee37baf50c" SearchSteps="FuzzySelector, CV" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
-                </uix:NGetText.Target>
-              </uix:NGetText>
-              <If Condition="[cartProductName.ToLower.Contains(maxProductName.ToLower) AndAlso&#xD;&#xA;cartProductPrice.Contains(maxProductPrice.ToString)]" sap:VirtualizedContainerService.HintSize="452,582" sap2010:WorkflowViewState.IdRef="If_6">
-                <If.Then>
-                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_43">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Correct Product In Cart&quot;]" />
-                  </Sequence>
-                </If.Then>
-                <If.Else>
-                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_44">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Wrong Product In Cart&quot;]" />
-                  </Sequence>
-                </If.Else>
-              </If>
-            </Sequence>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login - Invoke Workflow File (Login.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="password">[password]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="username">[username]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="expectedUsername">[expectedUsername]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="welcomeText">[welcomeText]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerifyCart - Invoke Workflow File (VerifyCart.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="VerifyCart.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="itemsExist">[itemsExist]</OutArgument>
+                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable - Invoke Workflow File (ScrapeProductsTable.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ScrapeProductsTable.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
+                <OutArgument x:TypeArguments="sd2:DataRow" x:Key="maxRow">[maxRow]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="prodUrl">[prodUrl]</OutArgument>
+                <OutArgument x:TypeArguments="x:Double" x:Key="maxProductPrice">[maxProductPrice]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="maxProductDescription">[maxProductDescription]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="maxProductName">[maxProductName]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="brandFilter">[brandFilter]</InArgument>
+                <InArgument x:TypeArguments="x:Double" x:Key="maxBudget">[maxBudget]</InArgument>
+                <InArgument x:TypeArguments="x:Double" x:Key="minBudget">[minBudget]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddProductToCart - Invoke Workflow File (AddProductToCart.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="AddProductToCart.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:Double" x:Key="maxProductPrice">[maxProductPrice]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="maxProductName">[maxProductName]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="cartProductPrice">[cartProductPrice]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="cartProductName">[cartProductName]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="prodUrl">[prodUrl]</InArgument>
+                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
@@ -923,6 +334,11 @@
           </uix:TargetApp.WorkingDirectory>
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
   </Sequence>
 </Activity>
