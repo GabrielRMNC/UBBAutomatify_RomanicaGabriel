@@ -108,50 +108,54 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="993,2462" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Login" sap:VirtualizedContainerService.HintSize="993,2458" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Opens Demoblaze" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,2439" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Opens Demoblaze" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="592,2435" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="590,2245" sap2010:WorkflowViewState.IdRef="Sequence_33">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="590,2241" sap2010:WorkflowViewState.IdRef="Sequence_33">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="LogInSequence" sap:VirtualizedContainerService.HintSize="556,2185" sap2010:WorkflowViewState.IdRef="Sequence_19">
+            <Sequence DisplayName="LogInSequence" sap:VirtualizedContainerService.HintSize="556,2181" sap2010:WorkflowViewState.IdRef="Sequence_19">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="LogIn Message" sap:VirtualizedContainerService.HintSize="522,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Log In Sequence&quot;]" />
-              <uix:NCheckState DisplayName="Checks welcome text" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="522,1927" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
+              <uix:NCheckState DisplayName="Checks welcome text" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="522,1923" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
                 <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="520,1239" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="520,1235" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGetText DisplayName="Gets welcome text" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="486,143" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" TextString="[out_welcomeText]" Version="V5">
-                      <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="1a012bc2-d03a-4827-9a3f-524364176260" ContentHash="RRVSvJQnyUm9cEJQa3Attw" CvType="AnyWordGroup" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="d6b81596-7fb0-4d62-9229-8a3b10a5afb6" InformativeScreenshot="41a3e59d28bb99a58f562f91da0558e9.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/wltYuM9vs0uIZ0z-JBl6uQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CVScreenId="1a012bc2-d03a-4827-9a3f-524364176260" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 192, 17" ElementType="Text" Guid="ba0fc592-3c7a-4608-b78e-32bfd281b48e" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NGetText.Target>
-                    </uix:NGetText>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'A  nameofuser'" sap:VirtualizedContainerService.HintSize="486,139" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a43f6733-c2e8-421a-be4b-4fb695788f14" InformativeScreenshot="e593379e91c35257ac6d6b155d3dde6b" Selector="&lt;webctrl id='nameofuser' tag='A' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[out_welcomeText]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
                     <If Condition="[out_welcomeText.Contains(in_expectedUsername)]" sap:VirtualizedContainerService.HintSize="486,1036" sap2010:WorkflowViewState.IdRef="If_4">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
