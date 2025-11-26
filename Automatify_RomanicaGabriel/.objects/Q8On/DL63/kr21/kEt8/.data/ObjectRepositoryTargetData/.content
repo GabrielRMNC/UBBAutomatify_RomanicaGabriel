@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="qLYz81gnxUGXpPiPn38mRQ" Reference="Fuap7hbV6EKEkmoz7NF_kQ/kEt8yTleVE2cHlB0D4MN9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="79mOuDovaE6JLwTE9QD8fw" Reference="Fuap7hbV6EKEkmoz7NF_kQ/kEt8yTleVE2cHlB0D4MN9Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="cf7d1aef-8747-4400-a938-420f87f5412a" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="5c10ec2b-902c-489a-b2ba-67ee1471b117" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/index.html" CVScreenId="b3b8da1c-2fae-48b7-9b8c-3985e66df82d" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1191, 198, 204, 40" ElementType="Text" ElementVisibilityArgument="[UiPath.UIAutomationNext.Enums.NElementVisibility.Visible]" FullSelectorArgument="&lt;webctrl id='nameofuser' tag='A' /&gt;" Guid="d95a11f8-2d07-478e-b060-0bfc3aa6b57c" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
       <TargetAnchorable.Anchors>
-        <scg:List x:TypeArguments="ITarget" Capacity="4">
-          <Target CVScreenId="cf7d1aef-8747-4400-a938-420f87f5412a" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 192, 17" ElementType="Text" Guid="8b26fa2b-791f-41f0-a8ac-54e9373e6e5b" SearchSteps="CV" TargetType="ComputerVisionBased" />
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target CVScreenId="b3b8da1c-2fae-48b7-9b8c-3985e66df82d" CvTextArea="1196, 208, 193, 17" CvTextArgument="Welcome GabrielRomanica" CvType="Text" DesignTimeRectangle="1196, 208, 193, 17" ElementType="Text" Guid="d8845450-4000-44d6-ada8-f7899aeb5cf5" SearchSteps="CV" TargetType="ComputerVisionBased" />
         </scg:List>
       </TargetAnchorable.Anchors>
-      <imageRef attrName="InformativeScreenshot" originalValue="b22808035cc80cca4359f4bbb2d59083.png" xmlns="">0OZkat9d1qUmmd6Wr_BNiqg</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="7028d4f522ba6d71209a01e47fe968bb.png" xmlns="">06zvN2-qgFkuvm1ZJKMBiXg</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">CheckState</x:String>
   </ObjectRepositoryTargetData.Data>

@@ -1,14 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ScrapeProductsTable" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="browser" Type="OutArgument(ui:Browser)" />
-    <x:Property Name="maxRow" Type="OutArgument(sd:DataRow)" />
-    <x:Property Name="prodUrl" Type="OutArgument(x:String)" />
-    <x:Property Name="maxProductPrice" Type="OutArgument(x:Double)" />
-    <x:Property Name="maxProductDescription" Type="OutArgument(x:String)" />
-    <x:Property Name="maxProductName" Type="OutArgument(x:String)" />
-    <x:Property Name="brandFilter" Type="InArgument(x:String)" />
-    <x:Property Name="maxBudget" Type="InArgument(x:Double)" />
-    <x:Property Name="minBudget" Type="InArgument(x:Double)" />
+    <x:Property Name="out_maxRow" Type="OutArgument(sd:DataRow)" />
+    <x:Property Name="io_prodUrl" Type="OutArgument(x:String)" />
+    <x:Property Name="out_maxProductPrice" Type="OutArgument(x:Double)" />
+    <x:Property Name="out_maxProductDescription" Type="OutArgument(x:String)" />
+    <x:Property Name="out_maxProductName" Type="OutArgument(x:String)" />
+    <x:Property Name="in_brandFilter" Type="InArgument(x:String)" />
+    <x:Property Name="in_maxBudget" Type="InArgument(x:Double)" />
+    <x:Property Name="in_minBudget" Type="InArgument(x:Double)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -113,24 +112,25 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ScrapeProductsTable" sap:VirtualizedContainerService.HintSize="993,3828" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ScrapeProductsTable" sap:VirtualizedContainerService.HintSize="993,4003" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome STORE(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="522,3805" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" OutUiElement="[browser]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Never]" DisplayName="Opens Demoblaze" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="522,3980" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,3611" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="520,3786" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Scrape Message" sap:VirtualizedContainerService.HintSize="486,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Scrape Products Sequence&quot;]" />
             <Sequence DisplayName="ScrapeProductsTableSequence" sap:VirtualizedContainerService.HintSize="486,3551" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Name="dtProducts" />
@@ -141,7 +141,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home (current)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clicks home" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,194" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="59cfdc25-0f42-4cf3-b478-aa56d8de6059" ContentHash="IlxnsCPFrE-L3iO9EFxqVA" CvTextArea="873, 209, 45, 16" CvTextArgument="Home" CvType="Text" DesignTimeRectangle="866, 198, 59, 40" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl parentid='navbarExample' tag='A' /&gt;" Guid="d0e4aa7c-78cb-40fc-9c38-ce3b7ef84fe7" InformativeScreenshot="40621e02389a2520697edc5b93582a7e.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/FwQOBZtng0G8lexlNyjVcg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -152,7 +152,7 @@
                   </uix:TargetAnchorable>
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtProducts]" DisplayName="Extract Table Data 'Extract Table Data'" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Price'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Description'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column3' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h4' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h5' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtProducts]" DisplayName="Extracts all products" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column3' Name='Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Price'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Description'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext' name2='Column3' attr2='href'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h4' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='h5' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="452,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V5">
                 <uix:NExtractData.NextLink>
                   <uix:TargetAnchorable BrowserURL="demoblaze.com/index.html" CVScreenId="8c789521-1afb-4bfd-9394-bdaef1de4d25" CvElementArea="1458, 691, 60, 38" CvTextArea="1472, 702, 32, 14" CvTextArgument="Next" CvType="Button" DesignTimeRectangle="1459, 688, 57, 36" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='next2' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='next2' tag='BUTTON' type='' class='page-link' aaname='Next' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Next' /&gt;" Guid="ab3dab4f-52e5-4399-afa8-465a990273e0" ImageBase64="" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector, CV" Version="V6" WaitForReadyArgument="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -169,7 +169,7 @@
                   <uix:TargetAnchorable BrowserURL="https://www.demoblaze.com/index.html" ContentHash="P3z1aHdv5UqMo4-LcGfmdQ" DesignTimeRectangle="676, 145, 855, 1056" FullSelectorArgument="&lt;webctrl id='tbodyid' tag='DIV' /&gt;" Guid="cd07fc9b-fd83-4727-8d23-3a08ec158a3e" InformativeScreenshot="3c1a43e84385e8a4610795a30dd78234.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/s7b-gYUIWEW9gBH9jYKjaA" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
                 </uix:NExtractData.Target>
               </uix:NExtractData>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Scraped rows: &quot; + dtProducts.Rows.Count.ToString]" />
+              <ui:LogMessage DisplayName="Scraped rows Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Scraped rows: &quot; + dtProducts.Rows.Count.ToString]" />
               <ui:AddDataColumn x:TypeArguments="x:Double" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="PriceNum" DataTable="[dtProducts]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
               <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dtProducts]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="452,758" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                 <ui:ForEachRow.Body>
@@ -222,20 +222,20 @@
                 <Assign.Value>
                   <InArgument x:TypeArguments="sd:DataTable" xml:space="preserve">[If(
   dtProducts.AsEnumerable().Any(Function(r) _
-    r.Field(Of String)("Name").ToLower().Contains(brandFilter.ToLower()) AndAlso
-    r.Field(Of Double)("PriceNum") &gt;= minBudget AndAlso
-    r.Field(Of Double)("PriceNum") &lt;= maxBudget
+    r.Field(Of String)("Name").ToLower().Contains(in_brandFilter.ToLower()) AndAlso
+    r.Field(Of Double)("PriceNum") &gt;= in_minBudget AndAlso
+    r.Field(Of Double)("PriceNum") &lt;= in_maxBudget
   ),
   dtProducts.AsEnumerable().
-    Where(Function(r) r.Field(Of String)("Name").ToLower().Contains(brandFilter.ToLower()) AndAlso
-                      r.Field(Of Double)("PriceNum") &gt;= minBudget AndAlso
-                      r.Field(Of Double)("PriceNum") &lt;= maxBudget).
+    Where(Function(r) r.Field(Of String)("Name").ToLower().Contains(in_brandFilter.ToLower()) AndAlso
+                      r.Field(Of Double)("PriceNum") &gt;= in_minBudget AndAlso
+                      r.Field(Of Double)("PriceNum") &lt;= in_maxBudget).
     CopyToDataTable(),
   dtProducts.Clone() 
 )]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Filtered rows count: &quot; + filteredProducts.Rows.Count.ToString]" />
+              <ui:LogMessage DisplayName="Filtered Rows Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Filtered rows count: &quot; + filteredProducts.Rows.Count.ToString]" />
               <If Condition="[filteredProducts.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="452,1580" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,1101" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -246,7 +246,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <Assign DisplayName="Assign5" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_5">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="sd:DataRow">[maxRow]</OutArgument>
+                        <OutArgument x:TypeArguments="sd:DataRow">[out_maxRow]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="sd:DataRow" xml:space="preserve">[filteredProducts.AsEnumerable().
@@ -256,37 +256,37 @@
                     </Assign>
                     <Assign DisplayName="Assign6" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_6">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[maxProductName]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[out_maxProductName]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[maxRow.Field(Of String)("Name")]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[out_maxRow.Field(Of String)("Name")]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <Assign DisplayName="Assign7" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_7">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="x:Double">[maxProductPrice]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Double">[out_maxProductPrice]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:Double">[maxRow.Field(Of Double)("PriceNum")]</InArgument>
+                        <InArgument x:TypeArguments="x:Double">[out_maxRow.Field(Of Double)("PriceNum")]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <Assign DisplayName="Assign8" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_8">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[maxProductDescription]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[out_maxProductDescription]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[maxRow.Field(Of String)("Description")]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[out_maxRow.Field(Of String)("Description")]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <Assign DisplayName="Assign9" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_9">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[prodUrl]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[io_prodUrl]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[maxRow.Field(Of String)("Url")]</InArgument>
+                        <InArgument x:TypeArguments="x:String">[out_maxRow.Field(Of String)("Url")]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Most expensive product: &quot; + maxProductName + &quot; | $&quot; + maxProductPrice.ToString + &quot; | &quot; + maxProductDescription]" />
+                    <ui:LogMessage DisplayName="Found Product Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Most expensive product: &quot; + out_maxProductName + &quot; | $&quot; + out_maxProductPrice.ToString + &quot; | &quot; + out_maxProductDescription]" />
                   </Sequence>
                 </If.Then>
                 <If.Else>
@@ -296,8 +296,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;No product matches&quot;]" />
-                    <TerminateWorkflow DisplayName="Terminate Workflow" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="No product matches" />
+                    <ui:LogMessage DisplayName="&quot;No matches&quot; Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;No product matches&quot;]" />
+                    <Throw Exception="[New SystemException(&quot;No product matches&quot;)]" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="Throw_1" />
                   </Sequence>
                 </If.Else>
               </If>

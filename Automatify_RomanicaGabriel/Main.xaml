@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -238,107 +238,62 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="993,976" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="993,722" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="cartProductPrice" />
-      <Variable x:TypeArguments="x:String" Name="cartProductName" />
-      <Variable x:TypeArguments="x:String" Name="prodUrl" />
-      <Variable x:TypeArguments="sd2:DataRow" Name="maxRow" />
-      <Variable x:TypeArguments="x:String" Name="maxProductDescription" />
-      <Variable x:TypeArguments="x:Double" Name="maxProductPrice" />
-      <Variable x:TypeArguments="x:String" Name="maxProductName" />
-      <Variable x:TypeArguments="x:Double" Default="1000" Name="maxBudget" />
-      <Variable x:TypeArguments="x:Double" Default="0" Name="minBudget" />
-      <Variable x:TypeArguments="x:String" Default="Samsung" Name="brandFilter" />
-      <Variable x:TypeArguments="x:Boolean" Name="itemsExist" />
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="maxAttempts" />
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="loginAttempts" />
-      <Variable x:TypeArguments="x:String" Default="GabrielRomanica" Name="expectedUsername" />
-      <Variable x:TypeArguments="x:String" Default="gabi2004" Name="password" />
-      <Variable x:TypeArguments="x:String" Default="GabrielRomanica" Name="username" />
-      <Variable x:TypeArguments="ui:Browser" Name="browser" />
-      <Variable x:TypeArguments="x:String" Name="welcomeText" />
+      <Variable x:TypeArguments="x:String" Name="out_cartProductPrice" />
+      <Variable x:TypeArguments="x:String" Name="out_cartProductName" />
+      <Variable x:TypeArguments="x:String" Name="io_prodUrl" />
+      <Variable x:TypeArguments="sd:DataRow" Name="out_maxRow" />
+      <Variable x:TypeArguments="x:String" Name="out_maxProductDescription" />
+      <Variable x:TypeArguments="x:Double" Name="out_maxProductPrice" />
+      <Variable x:TypeArguments="x:String" Name="out_maxProductName" />
+      <Variable x:TypeArguments="x:Double" Default="1000" Name="in_maxBudget" />
+      <Variable x:TypeArguments="x:Double" Default="0" Name="in_minBudget" />
+      <Variable x:TypeArguments="x:String" Default="Samsung" Name="in_brandFilter" />
+      <Variable x:TypeArguments="x:Boolean" Name="out_itemsExist" />
+      <Variable x:TypeArguments="x:String" Default="GabrielRomanica" Name="in_expectedUsername" />
+      <Variable x:TypeArguments="x:String" Default="gabi2004" Name="in_password" />
+      <Variable x:TypeArguments="x:String" Default="GabrielRomanica" Name="in_username" />
+      <Variable x:TypeArguments="x:String" Name="out_welcomeText" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="Chrome STORE(3)" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,953" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" OpenMode="[UiPath.UIAutomationNext.Enums.NAppOpenMode.IfNotOpen]" OutUiElement="[browser]" ScopeGuid="ba563bcc-d784-4b51-9952-4e233496e70c" Version="V2" WindowResize="Maximize">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,759" sap2010:WorkflowViewState.IdRef="Sequence_19">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login - Invoke Workflow File (Login.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Login.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="password">[password]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="username">[username]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="expectedUsername">[expectedUsername]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="welcomeText">[welcomeText]</OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerifyCart - Invoke Workflow File (VerifyCart.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="VerifyCart.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="x:Boolean" x:Key="itemsExist">[itemsExist]</OutArgument>
-                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable - Invoke Workflow File (ScrapeProductsTable.xaml)" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="ScrapeProductsTable.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
-                <OutArgument x:TypeArguments="sd2:DataRow" x:Key="maxRow">[maxRow]</OutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="prodUrl">[prodUrl]</OutArgument>
-                <OutArgument x:TypeArguments="x:Double" x:Key="maxProductPrice">[maxProductPrice]</OutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="maxProductDescription">[maxProductDescription]</OutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="maxProductName">[maxProductName]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="brandFilter">[brandFilter]</InArgument>
-                <InArgument x:TypeArguments="x:Double" x:Key="maxBudget">[maxBudget]</InArgument>
-                <InArgument x:TypeArguments="x:Double" x:Key="minBudget">[minBudget]</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddProductToCart - Invoke Workflow File (AddProductToCart.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="AddProductToCart.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:Double" x:Key="maxProductPrice">[maxProductPrice]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="maxProductName">[maxProductName]</InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="cartProductPrice">[cartProductPrice]</OutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="cartProductName">[cartProductName]</OutArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="prodUrl">[prodUrl]</InArgument>
-                <OutArgument x:TypeArguments="ui:Browser" x:Key="browser">[browser]</OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-          </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.OCREngine>
-        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd1:Rectangle, x:String))">
-          <ActivityFunc.Argument>
-            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
-          </ActivityFunc.Argument>
-        </ActivityFunc>
-      </uix:NApplicationCard.OCREngine>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Chrome" ContentHash="TFpoZhmrG0qFnzTc4ahbxQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAABrlJREFUWEeVlulzVGUWxu/fMtn3TtLdWRsJi4CRTUQTg8QEZEtiCGuUJWCIoVS0yrKYqfniMMwUNVoOo7iD8EWRKmYsS2tGLTdMer3dd+kt6ebkrWfqvfe+N7e70yn9cL/0h/6d5znnfc6RSl6ayZa8OEul52epdNpPpVN+Kjvnp7LJAJWfDVD5mQBVTASp4lSQKk8GqfK5EFWNh6jqeIiqj4ap+nCYag6FqeZghGpHI1Q7EqG6IZnqDshUv0+m+j1RatgdpYbBKLkGYuTaGaPGHTFq6lOoqVch6Q8vzrKS87MomfajdMqP0nN+lD3vR9nZAMonAig/HUD5qSAqTgZR8VwQlc+GUHk8hKqjIVQdCaP6UBjVB8OoGY2gdiSC2qEIavfLqNsno36PjPrdUdQPRtEwEIWrPwbXkzE09ilofEJBU48CqeT8LHPCSyct+Jll4Mcc8DETXsPhwxHUHjDhdXtl1D8dRf0uE97wVAyunTE07ogZ8MYeBU2P8wKm/SxfeZmAn7bgJ5aAH3bAn3HAuXoB3x1FA1dvwW31vSa86TEVUumUn5nwQK7yfPj4IrxKwLn1Ai6s5/DfYD2HNz/KC5j0Mxsuel4MzvtuwY2+c3h+3/fKOP7nOD79ch6XPkqjc79iqhfWW+qbt6to3qZCKns+wAzL8weuGFwM3TNW3znc6vsT0yrufp/FXJbZ3/u35014nvVcffMjvICzAVYAFwNXDC6GzoKvGo/hn5/NIZ1ZBIvv1wgtaT1X796qQSqfCDBueQFcDFwx+HAEzaMyXrmahJJYKACLb1amnKkX1nO4ewsv4HSQVXD4id8HH3hVxU+h+wXA/M8oQFjP4Zb1HO7erEGqOBVkRr/z4WLal4B7x2TMRKkAttQ3G6GCvhvqN2vwbOQFnAgy0e8CuJj2vKC5+H7KBly5mca12/MF4JwC8vpuwDdp8DysQ6p8NsRyhs0RMhzuGotg8h9xdJ2IGvB1J2PQ02bP3/1i3kg612AU/iKO8ALy++624N5uXsB4iOXARbweDGPvHzV867+PN66n7JT74O6i2i9/yKJvUsO2kypS8+ZvamIBEW1xKI0COFz0ncM3avB06/Bu0CFVHQuxnH6PhVF7MIKrd+aMPwiqhPYjUeOdD17QChTypyfUy9oC1g1raO9X8ZPf/M0owDF0NvwhHd71vIAjYea0nPe794JiA878LWHAXftlfPOLGTL3woTJSwkElVzbb/07g9adCtw9Cr67Z76QH2YoZ+gM6zl8g46WdXFI1YfCzJnrfNh6XzIL+PqXLFzc+r0yzl5O2KCjF+PGglk9okBL5mbAzwHClQ8X23TmtVTO0DnhLQ/yAsbCzN5o1qTXDcm4ensOAxc01O2R0TkaQ0g11d75XxYua7u9cmXxNfzn28JM+Oq7+/By9Y6hc8Jb1sQh1YxGmP3ERK5bW43D+Vq99HHa+MNUhqFnQjPga0YUxOKm+pt3M8ZbH55KIBA1f+OzsWs8YcPF0LWs121462pewEiE5axTcUyIlboriqnLScj6At68OWdvtrdvmTYn5hi2julGym0a0hFPmQVcu5UpgPOhM+BrTXhrVwJS7VCE2ao53FIt4OKa6RpWsPKAYsB3nNLtxfOXd+bsiP3k84zxm5ZYQPegbsC7++NLw1cl0LaSF7BfZjmqrTNKHBPOa0as1b++Zz3R2AIe6NcM+L6JxSG9eHnO7vm1G5mi8LYHEpDq9smsQLWA80tGnFLOg6JHweGXkzh2IWmEjHe7iv/+aA7hvQDBt820/di5FGZCVBTe7ktCqt8jsyVVC7g4JhzXjJHtVrzykHnhT+aQ8m98OmXAfZt1/DxLmAlSUXh7Jy9gd5Qtq9q6ZMQ+z1ksVsJtGNDxr+sZ3Pnqvv3UXn/DbNOvASoKb2/nBQxGWYFqxwEpLOdge587F4sj4Tq2mPDuvjhU64l+eCNbFN7RloTU8FSM5YCdljtVO48J51bLj9f1Op4eS+HW51n8/a0M1mwsDu9oTUFy9ceYc8JzVDuvGGG5les5Wy0vXpfruRPe6eUFPBljTvCSqvMtdwaMtdWc8fpb4Z2eFKTGPoUt2+tiljvTjcPXOuBdy8BbFuG+5jSkxl6F2XYX67VQnW+5M2Dy4SuWgbtNuK8pDanpcSXb/JhKzdtVcj+qknubSu5HVPJs1cizRSPPJo08GzXyPqyTt1unlod0atmgU8u6OLU+GKfWtXFqXR2ntlUJautKUPvKBLWvSFCHL0kdnUnq6EhSZ1uSOltT5POmyOdJkc+dphVNaVrRmKb/A+5n2xrojSV7AAAAAElFTkSuQmCC" InformativeScreenshot="077b366ee4914b3e26f44b1c396ae5df.jpg" Reference="Fuap7hbV6EKEkmoz7NF_kQ/kr21_YSxd0OZ0SDY2C2njg" Selector="&lt;html app='chrome.exe' title='STORE' /&gt;" Url="https://www.demoblaze.com/index.html" Version="V2">
-          <uix:TargetApp.Arguments>
-            <InArgument x:TypeArguments="x:String" />
-          </uix:TargetApp.Arguments>
-          <uix:TargetApp.WorkingDirectory>
-            <InArgument x:TypeArguments="x:String" />
-          </uix:TargetApp.WorkingDirectory>
-        </uix:TargetApp>
-      </uix:NApplicationCard.TargetApp>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </uix:NApplicationCard>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogIn Workflow" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Demoblaze\Login\Login.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_password">[in_password]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_username">[in_username]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_expectedUsername">[in_expectedUsername]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_welcomeText">[out_welcomeText]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerifyCart Workflow" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Demoblaze\Cart\VerifyCart.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_itemsExist">[out_itemsExist]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable Workflow" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Demoblaze\ScrapeProductsTable.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_maxRow">[out_maxRow]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="io_prodUrl">[io_prodUrl]</OutArgument>
+        <OutArgument x:TypeArguments="x:Double" x:Key="out_maxProductPrice">[out_maxProductPrice]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_maxProductDescription">[out_maxProductDescription]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_maxProductName">[out_maxProductName]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_brandFilter">[in_brandFilter]</InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="in_maxBudget">[in_maxBudget]</InArgument>
+        <InArgument x:TypeArguments="x:Double" x:Key="in_minBudget">[in_minBudget]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddProductToCart Workflow" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Demoblaze\Cart\AddProductToCart.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Double" x:Key="in_maxProductPrice">[out_maxProductPrice]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_maxProductName">[out_maxProductName]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_cartProductPrice">[out_cartProductPrice]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_cartProductName">[out_cartProductName]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_prodUrl">[io_prodUrl]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
