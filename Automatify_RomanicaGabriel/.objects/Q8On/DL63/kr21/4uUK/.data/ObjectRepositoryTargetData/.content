@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ZGqD42VUzkOq2Liguo1aag" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="demoblaze.com/cart.html" CVScreenId="fc7ec0f6-7145-4a59-86a8-38494a8486b0" CvElementArea="716, 658, 471, 41" CvType="InputBox" DesignTimeRectangle="719, 660, 468, 38" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='card' tag='INPUT' type='text' class='form-control' aaname='Credit card:' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a6cf3ef9-b555-4345-bc6f-621a18b16252" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="FuzzySelector, CV" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="fc7ec0f6-7145-4a59-86a8-38494a8486b0" CvTextArea="718, 617, 76, 14" CvTextArgument="Credit card:" CvType="Text" DesignTimeRectangle="719, 615, 74, 22" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Credit card:' parentid='orderModal' tag='LABEL' type='' class='form-control-label' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Credit card:' /&gt;" Guid="9a412e3c-0a04-45be-9d11-89545e3b4051" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="9a83724e5fbd51929488bc96f0cf6155.png" xmlns="">0oeyYwEg1dE61Wa5TBdac8g</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -238,8 +238,16 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="993,722" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="851,1470" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="Romania" Name="Country" />
+      <Variable x:TypeArguments="x:String" Default="Cluj-Napoca" Name="City" />
+      <Variable x:TypeArguments="x:String" Default="Romanica Gabriel" Name="Name" />
+      <Variable x:TypeArguments="x:String" Default="5103112531630585" Name="CreditCard" />
+      <Variable x:TypeArguments="x:String" Default="12" Name="Month" />
+      <Variable x:TypeArguments="x:String" Default="2027" Name="Year" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="qty" />
+      <Variable x:TypeArguments="x:String" Default="C:\Users\Gabi\Documents\UiPath\UBBAutomatify_RomanicaGabriel\Automatify_RomanicaGabriel\PO.xlsx" Name="excelPath" />
       <Variable x:TypeArguments="x:String" Name="out_cartProductPrice" />
       <Variable x:TypeArguments="x:String" Name="out_cartProductName" />
       <Variable x:TypeArguments="x:String" Name="io_prodUrl" />
@@ -261,7 +269,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogIn Workflow" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Demoblaze\Login\Login.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LogIn Workflow" sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Demoblaze\Login\Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_password">[in_password]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_username">[in_username]</InArgument>
@@ -269,12 +277,12 @@
         <OutArgument x:TypeArguments="x:String" x:Key="out_welcomeText">[out_welcomeText]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerifyCart Workflow" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Demoblaze\Cart\VerifyCart.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerifyCart Workflow" sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Demoblaze\Cart\VerifyCart.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_itemsExist">[out_itemsExist]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable Workflow" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Demoblaze\ScrapeProductsTable.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ScrapeProductsTable Workflow" sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Demoblaze\ScrapeProductsTable.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="sd:DataRow" x:Key="out_maxRow">[out_maxRow]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="io_prodUrl">[io_prodUrl]</OutArgument>
@@ -286,13 +294,46 @@
         <InArgument x:TypeArguments="x:Double" x:Key="in_minBudget">[in_minBudget]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddProductToCart Workflow" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Demoblaze\Cart\AddProductToCart.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddProductToCart Workflow" sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Demoblaze\Cart\AddProductToCart.xaml">
       <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:Int32" x:Key="qty">[qty]</InArgument>
         <InArgument x:TypeArguments="x:Double" x:Key="in_maxProductPrice">[out_maxProductPrice]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_maxProductName">[out_maxProductName]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_cartProductPrice">[out_cartProductPrice]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_cartProductName">[out_cartProductName]</OutArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_prodUrl">[io_prodUrl]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="VerifyCart Workflow" sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Demoblaze\Cart\VerifyCart.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_itemsExist">[out_itemsExist]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ProcessPO Workflow " sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Demoblaze\Excel\ProcessPO.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="prodUrl" />
+        <OutArgument x:TypeArguments="x:Double" x:Key="MaxPrice" />
+        <OutArgument x:TypeArguments="x:Double" x:Key="MinPrice" />
+        <OutArgument x:TypeArguments="x:Int32" x:Key="Qty" />
+        <OutArgument x:TypeArguments="x:String" x:Key="Category" />
+        <OutArgument x:TypeArguments="x:String" x:Key="Brand" />
+        <InArgument x:TypeArguments="x:String" x:Key="excelPath">[excelPath]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Checkout  Workflow " sap:VirtualizedContainerService.HintSize="450,182" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Demoblaze\Cart\Checkout.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="Year">[Year]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Month">[Month]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CreditCard">[CreditCard]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="City">[City]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Country">[Country]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Name">[Name]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendConfirmationEmail Workflow " sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Demoblaze\SendConfirmationEmail.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="screenshotPath" />
+        <OutArgument x:TypeArguments="ui:Image" x:Key="screenshotImg" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

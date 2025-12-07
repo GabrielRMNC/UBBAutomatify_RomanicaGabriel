@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Thank you for your purc…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "gFhNGxYh1EuJA_qaSQQRjg",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/gFhNGxYh1EuJA_qaSQQRjg",
+  "ParentRef": "Fuap7hbV6EKEkmoz7NF_kQ/SDg9N7TrCUSWDVZjesLxZA",
+  "Created": "2025-12-07T18:39:27.2512425Z",
+  "Updated": "2025-12-07T18:39:27.2512425Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

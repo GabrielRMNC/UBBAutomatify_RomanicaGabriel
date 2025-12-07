@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Purchase",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "j1xH0oc_50mX_vyH6PqZjg",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/j1xH0oc_50mX_vyH6PqZjg",
+  "ParentRef": "Fuap7hbV6EKEkmoz7NF_kQ/kr21_YSxd0OZ0SDY2C2njg",
+  "Created": "2025-12-07T18:16:23.3214871Z",
+  "Updated": "2025-12-07T18:16:23.3214871Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
