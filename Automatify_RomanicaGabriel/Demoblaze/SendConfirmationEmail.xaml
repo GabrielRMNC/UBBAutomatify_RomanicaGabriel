@@ -1,5 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="SendConfirmationEmail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:umae="clr-namespace:UiPath.Mail.Activities.Enums;assembly=UiPath.Mail.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
+    <x:Property Name="in_email" Type="InArgument(x:String)" />
     <x:Property Name="screenshotPath" Type="OutArgument(x:String)" />
     <x:Property Name="screenshotImg" Type="OutArgument(ui:Image)" />
   </x:Members>
@@ -60,6 +61,9 @@
       <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
       <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -125,64 +129,94 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendConfirmationEmail" sap:VirtualizedContainerService.HintSize="851,1154" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="upr:ILocalResource" Name="screenshotFile">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:String x:Key="SourceIdRef">NTakeScreenshot_1</x:String>
-            <x:String x:Key="SourcePropertyName">OutFile</x:String>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </Variable>
-    </Sequence.Variables>
+  <Sequence DisplayName="SendConfirmationEmail" sap:VirtualizedContainerService.HintSize="1295,1927" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="demoblaze" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="452,1131" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="9669ee84-5dad-4397-b0f4-d7908f966a75" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="[UiPath.UIAutomationNext.Enums.NAppCloseMode.Always]" DisplayName="demoblaze" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="488,1904" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="9669ee84-5dad-4397-b0f4-d7908f966a75" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,937" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1710" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTakeScreenshot DisplayName="Take Screenshot 'Thank you for your purc…'" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" OutFile="[screenshotFile]" OutImage="[screenshotImg]" SaveScreenshotTo="Image" ScopeIdentifier="9669ee84-5dad-4397-b0f4-d7908f966a75" Version="V5">
-              <uix:NTakeScreenshot.Target>
-                <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" ContentHash="QAH23iAdokCmfbrR_Numlg" DesignTimeRectangle="712, 392, 478, 422" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div' idx='7' tabindex='-1' tag='DIV' /&gt;" Guid="f9de402d-c1e4-42d6-80b2-08557dd47d95" InformativeScreenshot="8d6d4bf5ac335ea5829f85cf4dfc3ca7.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/gFhNGxYh1EuJA_qaSQQRjg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
-              </uix:NTakeScreenshot.Target>
-            </uix:NTakeScreenshot>
-            <ui:SaveImage DisplayName="Save Image" FileName="[&quot;C:\Users\Gabi\Documents\UiPath\UBBAutomatify_RomanicaGabriel\Automatify_RomanicaGabriel\.screenshots\OrderConfirmation_&quot; &amp; Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) &amp; &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="416,171" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[screenshotImg]" />
-            <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[screenshotPath]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">["C:\Users\Gabi\Documents\UiPath\UBBAutomatify_RomanicaGabriel\Automatify_RomanicaGabriel\.screenshots\OrderConfirmation_" &amp; Now.ToString("yyyyMMdd_HHmmss") &amp; ".png"]</InArgument>
-              </Assign.Value>
-            </Assign>
-            <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseRichTextEditor="{x:Null}" ConnectionMode="Undefined" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,222" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Order placed successfully!" To="gabirmncdemo@outlook.com" UseISConnection="False">
-              <ui:SendOutlookMail.ConnectionDetailsBackupSlot>
-                <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
-                  <usau:BackupSlot.BackupValues>
-                    <scg:Dictionary x:TypeArguments="umae:ConnectionDetails, scg:List(x:Object)" />
-                  </usau:BackupSlot.BackupValues>
-                </usau:BackupSlot>
-              </ui:SendOutlookMail.ConnectionDetailsBackupSlot>
-              <ui:SendOutlookMail.Files>
-                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                  <InArgument x:TypeArguments="x:String">[screenshotPath]</InArgument>
-                </scg:List>
-              </ui:SendOutlookMail.Files>
-            </ui:SendOutlookMail>
+            <uix:NCheckState DisplayName="Check App State 'Thank you for your purc…(1)'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="452,1650" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="9669ee84-5dad-4397-b0f4-d7908f966a75" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,1104" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="upr:ILocalResource" Name="screenshotFile" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTakeScreenshot DisplayName="Take Screenshot 'Thank you for your purc…'" FileName="screenshot.png" FileNameMode="None" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="NTakeScreenshot_1" OutFile="[screenshotFile]" OutImage="[screenshotImg]" SaveScreenshotTo="Image" ScopeIdentifier="9669ee84-5dad-4397-b0f4-d7908f966a75" Version="V5">
+                    <uix:NTakeScreenshot.Target>
+                      <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" ContentHash="o-LgzeH-JkKrL28gpOP36w" DesignTimeRectangle="231, 383, 478, 422" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='DIV' class='sweet-alert  showSweetAlert visible' /&gt;" Guid="f9de402d-c1e4-42d6-80b2-08557dd47d95" InformativeScreenshot="d219d6d202e86c54463a4afcdafb0cf5.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/gFhNGxYh1EuJA_qaSQQRjg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTakeScreenshot.Target>
+                  </uix:NTakeScreenshot>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Took screenshot&quot;]" />
+                  <ui:SaveImage DisplayName="Save Image" FileName="[&quot;C:\Users\Gabi\Documents\UiPath\UBBAutomatify_RomanicaGabriel\Automatify_RomanicaGabriel\.screenshots\OrderConfirmation_&quot; &amp; Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) &amp; &quot;.png&quot;]" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[screenshotImg]" />
+                  <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[screenshotPath]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["C:\Users\Gabi\Documents\UiPath\UBBAutomatify_RomanicaGabriel\Automatify_RomanicaGabriel\.screenshots\OrderConfirmation_" &amp; Now.ToString("yyyyMMdd_HHmmss") &amp; ".png"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" UseRichTextEditor="{x:Null}" ConnectionMode="LegacyConfiguration" DisplayName="Send Outlook Desktop Mail Message" sap:VirtualizedContainerService.HintSize="416,222" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="Order placed successfully!" To="[in_email]" UseISConnection="False">
+                    <ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+                      <usau:BackupSlot x:TypeArguments="umae:ConnectionDetails" StoredValue="{x:Null}">
+                        <usau:BackupSlot.BackupValues>
+                          <scg:Dictionary x:TypeArguments="umae:ConnectionDetails, scg:List(x:Object)" />
+                        </usau:BackupSlot.BackupValues>
+                      </usau:BackupSlot>
+                    </ui:SendOutlookMail.ConnectionDetailsBackupSlot>
+                    <ui:SendOutlookMail.Files>
+                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                        <InArgument x:TypeArguments="x:String">[screenshotPath]</InArgument>
+                      </scg:List>
+                    </ui:SendOutlookMail.Files>
+                  </ui:SendOutlookMail>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,261" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Order Confirmation didn't show up&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="demoblaze.com/cart.html" CVScreenId="fc5a728b-fb67-4b7b-b4f9-c4934121632b" ContentHash="5R-arWsX0UWSlrv3eQ2eKA" DesignTimeRectangle="729, 537, 444, 35" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;h2' tag='H2' /&gt;" Guid="af1ff5cb-8294-4a4d-b560-d7598bd23b6d" InformativeScreenshot="b14b49b11ee2cf72894962c0ce90fc59.png" Reference="Fuap7hbV6EKEkmoz7NF_kQ/vLPmOuv5lkes87ZW33J79Q" ScopeSelectorArgument="&lt;html app='chrome.exe' title='STORE' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="fc5a728b-fb67-4b7b-b4f9-c4934121632b" CvElementArea="903, 426, 95, 92" CvType="Icon" DesignTimeRectangle="907, 429, 88, 88" FullSelectorArgument="&lt;webctrl class='sa-placeholder' tag='DIV' /&gt;" Guid="4eb6aa2d-bc2c-44b5-b974-df3733ebd7ac" ImageBase64="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" SearchSteps="Selector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

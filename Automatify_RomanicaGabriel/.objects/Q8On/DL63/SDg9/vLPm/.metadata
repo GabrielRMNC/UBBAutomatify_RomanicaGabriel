@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Thank you for your purc…(1)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "vLPmOuv5lkes87ZW33J79Q",
+  "Reference": "Fuap7hbV6EKEkmoz7NF_kQ/vLPmOuv5lkes87ZW33J79Q",
+  "ParentRef": "Fuap7hbV6EKEkmoz7NF_kQ/SDg9N7TrCUSWDVZjesLxZA",
+  "Created": "2026-01-13T19:55:08.2975898Z",
+  "Updated": "2026-01-13T19:55:08.2975898Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.10.19.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=25.10.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
